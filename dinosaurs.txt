@@ -1,0 +1,24 @@
+Rex
+66
+Tyrannosaurus rex
+Herb
+5
+Brachiosaurus
+Kolmisarvinaama
+66
+Triceratops
+Tyranniliskojen Kuningas
+66
+Tyrannosaurus rex
+Harjalisko Kattolisko
+149
+Stegosaurus
+Pitkä Kaula Käsivarsilisko
+153
+Brachiosaurus
+Nopea Varas
+75
+Velociraptor
+Leveä Lisko
+215
+Plateosaurus
