@@ -1,4 +1,6 @@
 package Tehtava1.Dinotype;
 
-public class DinosaurBehavior {
+public interface DinosaurBehavior {
+    void move();
+    String favoriteFood();
 }

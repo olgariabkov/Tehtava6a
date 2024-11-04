@@ -1,4 +1,4 @@
-package Tehtava1.Dinotype;
+package Tehtava1;
 
 public enum MainFoodSource {
     HERBIVORE,

@@ -2,23 +2,39 @@ Rex
 66
 Tyrannosaurus rex
 Herb
+HERBIVORE
+Carn
 5
 Brachiosaurus
 Kolmisarvinaama
+CARNIVORE
+Herb
 66
 Triceratops
 Tyranniliskojen Kuningas
+OMNIVORE
+Tyrannosaurus rex
 66
 Tyrannosaurus rex
 Harjalisko Kattolisko
+HERBIVORE
+Brac
 149
 Stegosaurus
 Pitkä Kaula Käsivarsilisko
+CARNIVORE
+Cer
 153
 Brachiosaurus
 Nopea Varas
+OMNIVORE
+Vel
 75
 Velociraptor
 Leveä Lisko
+CARNIVORE
+Tri
 215
 Plateosaurus
+Kolmisarvinaama
+HERBIVORE
