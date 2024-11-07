@@ -62,18 +62,23 @@ public class Park {
             return;
         }
 
-        if (dinosaurs.contains(d)) {
+        if (dinosaurs.stream().anyMatch(existingDino -> existingDino.equals(d))) {
+            System.out.println("Dinosaur already exists");
+            return;
+        }
+
+        /*if (dinosaurs.contains(d)) {
             System.out.println("cannot add more dinosaurs. Dino already exists.");
             return;
 
-        }
-        if (dinosaurs.size() < (dinosaurs.size() + 1) * employeeToDino) {
+        }*/
+        /*if (dinosaurs.size() < (dinosaurs.size() + 1) * employeeToDino) {
             System.out.println("Cannot add dinosaur: There must be at least three times more employees");
             return;
         }
 
         dinosaurs.add(d);
-        System.out.println(d.getName() + " was added to the park");
+        System.out.println(d.getName() + " was added to the park"); */
 
 
         /*if (dinosaurs.size() < maxAmountOfDinosaurs) {
@@ -83,21 +88,38 @@ public class Park {
             System.out.println("cannot add more dinosaurs. Park is full."); */
 
 
+        if (dinosaurs.size() >= maxAmountOfDinosaurs) {
+            System.out.println("Too many dinosaurs");
+            return;
+        }
+
+        if (employees.size() < (dinosaurs.size() + 1) * employeeToDino) {
+            System.out.println("Too few employees");
+            return;
+
+        }
+
+        dinosaurs.add(d);
+        System.out.println(d.getName() + "Dinosaur added");
 
     }
 
-    public void updateDinosaur(int index) {
-         if (index >= 0 && index < dinosaurs.size()) {
+    public void updateDinosaur(Dinosaur dinosaurToUpdate) { //(int index) {
+         /*if (index >= 0 && index < dinosaurs.size()) {
           Dinosaur d = askDinosaurInfo();
                     dinosaurs.set(index, d);
                     System.out.println("Dinosaur updated at index" + index);
                 } else {
-                    System.out.println("Invalid index for dinosaur update.");
+                    System.out.println("Invalid index for dinosaur update."); */
+        if (dinosaurToUpdate == null && dinosaurs.contains(dinosaurToUpdate)) {
+            System.out.println("Dino updated " + dinosaurToUpdate);
+        } else {
+            System.out.println("Dino not found");
                 }
             }
 
             //poistetaan dino
-            public void removeDinosaur(int index) {
+            public void removeDinosaur(Dinosaur d) { //(int index) {
                 // Tarkista viel alkion olemassaolo.
                 /*if (index >= 0 && index < dinosaurs.size()) {
                     dinosaurs.remove(index);
@@ -105,10 +127,20 @@ public class Park {
                 } else {
                     System.out.println("Invalid index for dinosaur removal");
                 }*/
-                if (index < 0 || index >= dinosaurs.size()) {
-                    System.out.println("Invalid index for dinosaur removal");
+
+                if (d == null) {
+                    System.out.println("Dinosaur is null");
                     return;
                 }
+
+                if (!dinosaurs.contains(d)) {
+                    System.out.println("Dinosaur not found");
+                    return;
+                }
+                /*if (index < 0 || index >= dinosaurs.size()) {
+                    System.out.println("Invalid index for dinosaur removal");
+                    return;
+                }*/
 
 
                /* // Tarkista, onko dino olemassa.
@@ -123,9 +155,12 @@ public class Park {
                     return;
                 }
 
-                Dinosaur dino = dinosaurs.remove(index);
-                System.out.println(dino.getName() + " was removed from the park.");
+                dinosaurs.remove(d);
+                System.out.println(d.getName() + "Dinosaur removed");
 
+                /*Dinosaur dino = dinosaurs.remove(index);
+                System.out.println(dino.getName() + " was removed from the park.");
+*/
 
             }
 
@@ -189,9 +224,14 @@ boolean isLand = scanner.nextLine().equalsIgnoreCase("y");
                 }
 
                 //tarkistetaan onko tt jo olemassa
-                if (employees.contains(e)) {
+                /*if (employees.contains(e)) {
+                    System.out.println("Employee already exists");
+                    return; */
+                if (employees.stream().anyMatch(existingEmp -> existingEmp.equals(e))) {
                     System.out.println("Employee already exists");
                     return;
+
+
                 }
                 employees.add(e);
                 System.out.println(e.getName() + " was added as an employee");
@@ -217,7 +257,7 @@ boolean isLand = scanner.nextLine().equalsIgnoreCase("y");
                 }
             }
 
-            public void removeEmployee(int index) {
+            public void removeEmployee(Employee e) {//(int index) {
                 // Etsi ensin se olio, joka halutaan poistaa
                 //System.out.println("Anna poistettavan tyÃ¶ntekijÃ¤n nimi: ");
                 //String name = scanner.nextLine();
@@ -227,8 +267,18 @@ boolean isLand = scanner.nextLine().equalsIgnoreCase("y");
                 } else {
                     System.out.println("Invalid index for the employee removal");
                 }*/
-                if (index < 0 || index >= employees.size()) {
+                /*if (index < 0 || index >= employees.size()) {
                     System.out.println("Invalid index for employee removal");
+                    return;
+                } */
+
+                if (e == null) {
+                    System.out.println("Employee is null");
+                    return;
+                }
+
+                if (!employees.contains(e)) {
+                    System.out.println("Employee not found");
                     return;
                 }
 
@@ -239,10 +289,13 @@ boolean isLand = scanner.nextLine().equalsIgnoreCase("y");
 
                     }
 
+                employees.remove(e);
+                System.out.println(e.getName() + " was removed");
+
                 // Tarkista, onko tyÃ¶ntekijÃ¤ olemassa.
-                Employee employee = employees.remove(index);
+                /*Employee employee = employees.remove(index);
                     System.out.println(employee.getName() + " was removed from the park " );
-                    return;
+                    return; */
 
                 }
 

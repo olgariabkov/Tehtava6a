@@ -11,7 +11,7 @@ import Tehtava1.ttrooli.Veterinarian;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class App2 {
+public class Apptest {
 
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -19,7 +19,8 @@ public class App2 {
 
         //luodaan uusi Park objekkti nimellä D...
         Park park = new Park("Dinosaur Park in TUAS");
-
+        Jeep jeep = new Jeep("Safari Jeep", 4);
+        Helicopter helicopter = new Helicopter("Park Helicopter", 6);
 
         //Dinosaur dino = new Dinosaur("Dino", 5, "Carnivore", "Land", MainFoodSource.CARNIVORE);
         //Dinosaur dino2 = new Dinosaur("Dino2", 5, "Carnivore", "Land", MainFoodSource.CARNIVORE);
@@ -39,6 +40,8 @@ public class App2 {
         AquaticDinosaur aquaticDino = new AquaticDinosaur("Mosasaurus", 7, "Aquatic", "sea", MainFoodSource.OMNIVORE, true);
         LandDinosaur landDino = new LandDinosaur("T-Rex", 12, "Land", "land", MainFoodSource.CARNIVORE, true, "park");
 
+        jeep.travel();
+        helicopter.travel();
 
         //System.out.println(park);
 

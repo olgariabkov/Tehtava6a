@@ -38,14 +38,30 @@ public class Employee {
         this.yearsOfExperience = yearsOfExperience;
     }
 
+    public void updateEmployeeInfo(String newJobTitle, Integer newYearsOfExperience) {
+        if (newJobTitle != null) {
+            this.jobTitle = newJobTitle;
+        }
+
+        if (newYearsOfExperience != null) {
+            this.yearsOfExperience = newYearsOfExperience;
+        }
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        Employee employee = (Employee) obj;
+
+        Employee other = (Employee) obj;
+        return yearsOfExperience == other.yearsOfExperience &&
+                name.equals(other.name) &&
+                jobTitle.equals(other.jobTitle);
+
+       /* Employee employee = (Employee) obj;
         return yearsOfExperience == employee.yearsOfExperience &&
                 name.equals(employee.name) &&
-                jobTitle.equals(employee.jobTitle);
+                jobTitle.equals(employee.jobTitle); */
     }
 
     @Override

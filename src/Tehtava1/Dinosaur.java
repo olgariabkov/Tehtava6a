@@ -72,16 +72,38 @@ public abstract class Dinosaur {
                 '}';
     }
 
+    public void updateDinoInfo(Integer newAge, String newLiveOn, MainFoodSource newFood) {
+        if (newAge != null) {
+            this.age = newAge;
+        }
+
+        if (newLiveOn != null) {
+            this.liveOn = newLiveOn;
+        }
+
+        if (newFood != null) {
+            this.food = newFood;
+        }
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        Dinosaur dinosaur = (Dinosaur) obj;
+        Dinosaur other = (Dinosaur) obj;
+        return age == other.age &&
+                Objects.equals(name, other.name) &&
+                Objects.equals(species, other.species) &&
+                Objects.equals(liveOn, other.liveOn) &&
+                food == other.food;
+
+        /*Dinosaur dinosaur = (Dinosaur) obj;
         return age == dinosaur.age &&
                 Objects.equals(name, dinosaur.name) &&
                 Objects.equals(species, dinosaur.species) &&
                 Objects.equals(liveOn, dinosaur.liveOn) &&
-                food == dinosaur.food;
+                food == dinosaur.food; */
+
                 /*name.equals(dinosaur.name) &&
                 species.equals(dinosaur.species) &&
                 liveOn.equals(dinosaur.liveOn) &&
